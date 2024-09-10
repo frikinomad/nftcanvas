@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import WalletContextProvider from "@/contexts/WalletContext";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +22,11 @@ export default function RootLayout({
         <meta name="dscvr:canvas:version" content="vNext"/>
         <meta name="og:image" content="https://dscvr-buildathon.vercel.app/Cptn_BlockBeard_w2.jpg"></meta>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <WalletContextProvider>
+          {children}
+        </WalletContextProvider>
+      </body>
     </html>
   );
 }
