@@ -7,9 +7,13 @@ import {
   sol,
 } from '@metaplex-foundation/umi'
 import { irysUploader } from '@metaplex-foundation/umi-uploader-irys'
+import { NFTStorage, File } from 'nft.storage';
 import { createUmi } from '@metaplex-foundation/umi-bundle-defaults'
 import fs from 'fs'
 import path from 'path'
+
+const NFT_STORAGE_KEY = '826a2b23.6758b1613ed2493f88371122b571014d';
+const client = new NFTStorage({ token: NFT_STORAGE_KEY });
 
 
 const createNft = async (mintType: string, user: string) => {
@@ -73,9 +77,10 @@ const createNft = async (mintType: string, user: string) => {
   }
 
   console.log('Uploading Metadata...')
-  const metadataUri = await umi.uploader.uploadJson(metadata).catch((err) => {
-    throw new Error(err)
-  })
+  // const metadataUri = await umi.uploader.uploadJson(metadata).catch((err) => {
+  //   throw new Error(err)
+  // })
+  const metadataUri = "https://arweave.net/pgsE5DcfZYpG651NV1s7wKCCR7d2vY6PXSDOxzXk_q8"
 
 
   // We generate a signer for the NFT

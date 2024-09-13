@@ -20,8 +20,10 @@
     "@solana/actions": "^1.6.4",
     "@solana/wallet-adapter-wallets": "^0.19.32",
     "@solana/web3.js": "^1.95.3",
+    "bs58": "^6.0.0",
     "firebase": "^10.13.1",
     "next": "14.2.7",
+    "nft.storage": "^7.2.0",
     "pusher-js": "^8.4.0-rc2",
     "react": "^18",
     "react-dom": "^18"
